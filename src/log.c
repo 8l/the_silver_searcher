@@ -56,9 +56,7 @@ void vplog(const unsigned int level, const char *fmt, va_list args) {
             fprintf(stream, "WARN: ");
             break;
         case LOG_LEVEL_ERR:
-            stream = stderr;
-            fprintf(stream, "ERR: ");
-            break;
+	    return;
     }
 
     vfprintf(stream, fmt, args);
